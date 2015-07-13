@@ -4,52 +4,29 @@ class VulnerabilitiesController < ApplicationController
   	@vulnerability = Vulnerability.new
   end
 
-  def edit
-    with_known_vulnerability
-  end
-
-  def show
-    with_known_vulnerability
-  end
-
-  def index
-  	@vulnerability = Vulnerability.all
-  end
-
-  def destroy
+  def resolve
     with_known_vulnerability do
-    	@vulnerability.destroy
+      @product = Product.find(params[:product_id])
+      @vulnerability.resolve!
+
+      redirect_to product_path(@product), notice: 'Vulnerability was successfully resolved'
     end
   end
 
-  def update
-    with_known_vulnerability do
-    	respond_to do |format|
-        if @vulnerability.update(vulnerability_params)
-    	    format.html { redirect_to product_path(@product), notice: 'Vulnerability was successfully updated.' }
-    		  format.json { render :show, status: :ok, location: @vulnerability }
-    	  else 
-    		  format.html { render :edit }
-    		  format.json { render json: @vulnerability.errors, status: :unprocessable_entity }
-    	  end
-    	end
+  def create
+    @product       = Product.find(params[:product_id])
+    @vulnerability = @product.vulnerabilities.create!(vulnerability_params)
+
+    respond_to do |format|
+      if @vulnerability.save
+        format.html { redirect_to product_path(@product), notice: 'Vulnerability was successfully created.' }
+        format.json { render :show, status: :ok, location: @vulnerability }
+      else 
+   	    format.html { render :new }
+   	    format.json { render json: @vulnerability.errors, status: :unprocessable_entity}
+   	  end
     end
   end
-
- def create
-   @product       = Product.find(params[:product_id])
-   @vulnerability = @product.vulnerabilities.create!(vulnerability_params)
-
-   respond_to do |format|
-     if @vulnerability.save
-       format.html { redirect_to product_path(@product), notice: 'Vulnerability was successfully created.' }
-       format.json { render :show, status: :ok, location: @vulnerability }
-     else 
-   	   format.html { render :new }
-   	   format.json { render json: @vulnerability.errors, status: :unprocessable_entity}
-   	 end
-   end
- end
 
  
 private

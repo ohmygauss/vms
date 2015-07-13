@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   
 
   resources :products do
-    resources :vulnerabilities
+    resources :vulnerabilities do
+      member do
+        get :resolve
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

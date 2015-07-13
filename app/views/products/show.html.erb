@@ -4,7 +4,7 @@
 <p><%= @product.name %></p>
 
 <h2>Vulnerabilities</h2>
-<%= render @product.vulnerabilities %>
+<%= render @product.vulnerabilities, product: @product %>
 
  <%= link_to 'Add vulnerability', new_product_vulnerability_path(@product) %>
         
