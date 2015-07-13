@@ -7,8 +7,7 @@ class VulnerabilitiesController < ApplicationController
 
   def resolve
     with_product do
-      @vulnerability = Vulnerability.find(params[:id])
-      @vulnerability.resolve!
+      Vulnerability.find(params[:id]).resolve!
     
       redirect_to product_path(@product), notice: 'Vulnerability was successfully resolved'
     end
@@ -26,7 +25,7 @@ class VulnerabilitiesController < ApplicationController
     end
   end
 
-private
+  private
 
   def with_product
     @product = Product.find(params[:product_id])
