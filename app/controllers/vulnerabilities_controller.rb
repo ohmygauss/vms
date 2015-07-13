@@ -1,39 +1,36 @@
 class VulnerabilitiesController < ApplicationController
   def new 
-    @product       = Product.find(params[:product_id])
-  	@vulnerability = Vulnerability.new
+    with_product do
+  	 @vulnerability = Vulnerability.new
+    end
   end
 
   def resolve
-    with_known_vulnerability do
-      @product = Product.find(params[:product_id])
+    with_product do
+      @vulnerability = Vulnerability.find(params[:id])
       @vulnerability.resolve!
-
+    
       redirect_to product_path(@product), notice: 'Vulnerability was successfully resolved'
     end
   end
 
   def create
-    @product       = Product.find(params[:product_id])
-    @vulnerability = @product.vulnerabilities.create!(vulnerability_params)
-
-    respond_to do |format|
+    with_product do
+      @vulnerability = @product.vulnerabilities.create!(vulnerability_params)
+      
       if @vulnerability.save
-        format.html { redirect_to product_path(@product), notice: 'Vulnerability was successfully created.' }
-        format.json { render :show, status: :ok, location: @vulnerability }
+        redirect_to product_path(@product), notice: 'Vulnerability was successfully created.'
       else 
-   	    format.html { render :new }
-   	    format.json { render json: @vulnerability.errors, status: :unprocessable_entity}
+   	    render :new
    	  end
     end
   end
 
- 
 private
 
-  def with_known_vulnerability
-    @vulnerability = Vulnerability.find(params[:id])
-    yield if block_given?
+  def with_product
+    @product = Product.find(params[:product_id])
+    yield
   end
 
   def vulnerability_params

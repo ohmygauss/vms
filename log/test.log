@@ -7327,3 +7327,2136 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms)
   [1m[35mVulnerability Load (0.1ms)[0m  SELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  ORDER BY "vulnerabilities"."id" ASC LIMIT 1  [["product_id", 1]]
   [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:42:12.717332"], ["updated_at", "2015-07-13 15:42:12.717332"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 109ms (Views: 101.1ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 25ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fc46333ef30 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57517-j6utth.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57517-c7xoaj.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57517-1mywn2x.pdf'
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:42:12.873996"], ["updated_at", "2015-07-13 15:42:12.891120"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 28ms (ActiveRecord: 0.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:42:12.914318"], ["updated_at", "2015-07-13 15:42:12.914318"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fc461bccd48 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57517-lxowes.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57517-jr8862.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57517-1r29fo6.pdf'
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:42:12.930740"], ["updated_at", "2015-07-13 15:42:12.943073"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 21ms (ActiveRecord: 0.4ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:42:12.963683"], ["updated_at", "2015-07-13 15:42:12.963683"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:42:12 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fc45dc8b760 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57517-1bqevup.exe>, @original_filename="calc.exe", @content_type="application/x-msdos-program", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"calc.exe\"\r\nContent-Type: application/x-msdos-program\r\nContent-Length: 115200\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57517-1sm6pr3.exe'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57517-mghal0.exe'
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (4.4ms)
+  Rendered products/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 34ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:42:13.019979"], ["updated_at", "2015-07-13 15:42:13.019979"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:42:13.029055"], ["updated_at", "2015-07-13 15:42:13.029055"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/products/new" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (0.8ms)
+  Rendered products/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Test 2"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 2"], ["created_at", "2015-07-13 15:42:13.042968"], ["updated_at", "2015-07-13 15:42:13.042968"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/2
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/products/2" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 2]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:42:13.054492"], ["updated_at", "2015-07-13 15:42:13.054492"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/edit" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered products/_form.html.erb (0.9ms)
+  Rendered products/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Modified 1"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?  [["name", "Modified 1"], ["updated_at", "2015-07-13 15:42:13.069099"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:42:13.080255"], ["updated_at", "2015-07-13 15:42:13.080255"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started DELETE "/products/1" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "products" WHERE "products"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/products" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:42:13.101145"], ["updated_at", "2015-07-13 15:42:13.101145"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (3.6ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:42:13.143845"], ["updated_at", "2015-07-13 15:42:13.143845"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.1ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.8ms)
+  Rendered products/show.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:42:13.180395"], ["updated_at", "2015-07-13 15:42:13.180395"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (1.5ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:42:13.208755"], ["updated_at", "2015-07-13 15:42:13.208755"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.2ms)
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/1/resolve" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by VulnerabilitiesController#resolve as HTML
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [1m[36mVulnerability Load (0.1ms)[0m  [1mSELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "vulnerabilities" SET "resolved" = ?, "resolved_time" = ?, "updated_at" = ? WHERE "vulnerabilities"."id" = ?  [["resolved", "t"], ["resolved_time", "2015-07-13 15:42:13.223958"], ["updated_at", "2015-07-13 15:42:13.224393"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:42:13 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.2ms)
+  Rendered products/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  ORDER BY "vulnerabilities"."id" ASC LIMIT 1  [["product_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:43:17.392568"], ["updated_at", "2015-07-13 15:43:17.392568"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 125ms (Views: 114.7ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 23ms (Views: 18.3ms | ActiveRecord: 0.3ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fe1bb292580 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57534-61amgu.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57534-1qyl6v4.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57534-ca9ryc.pdf'
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:43:17.566192"], ["updated_at", "2015-07-13 15:43:17.580809"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 24ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:43:17.602037"], ["updated_at", "2015-07-13 15:43:17.602037"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fe1b2d08c48 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57534-rw4qy1.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57534-1srxl6e.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57534-ychq3o.pdf'
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:43:17.621526"], ["updated_at", "2015-07-13 15:43:17.634566"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 22ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:43:17.656066"], ["updated_at", "2015-07-13 15:43:17.656066"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fe1b9317c50 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57534-1k3nc8r.exe>, @original_filename="calc.exe", @content_type="application/x-msdos-program", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"calc.exe\"\r\nContent-Type: application/x-msdos-program\r\nContent-Length: 115200\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57534-tzt2s.exe'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57534-1gbtplu.exe'
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (4.8ms)
+  Rendered products/edit.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 39ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:43:17.717054"], ["updated_at", "2015-07-13 15:43:17.717054"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:43:17.727810"], ["updated_at", "2015-07-13 15:43:17.727810"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/new" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (1.1ms)
+  Rendered products/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Test 2"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 2"], ["created_at", "2015-07-13 15:43:17.743447"], ["updated_at", "2015-07-13 15:43:17.743447"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/2
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/products/2" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 2]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:43:17.754398"], ["updated_at", "2015-07-13 15:43:17.754398"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/edit" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered products/_form.html.erb (1.0ms)
+  Rendered products/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Modified 1"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?  [["name", "Modified 1"], ["updated_at", "2015-07-13 15:43:17.770989"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:43:17.783565"], ["updated_at", "2015-07-13 15:43:17.783565"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started DELETE "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "products" WHERE "products"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/products" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:43:17.803522"], ["updated_at", "2015-07-13 15:43:17.803522"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (3.9ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 0.1ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:43:17.851028"], ["updated_at", "2015-07-13 15:43:17.851028"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 11ms
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:43:17.879366"], ["updated_at", "2015-07-13 15:43:17.879366"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (2.0ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:43:17 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:43:17.905688"], ["updated_at", "2015-07-13 15:43:17.905688"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 500 Internal Server Error in 5ms
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:44:01.219513"], ["updated_at", "2015-07-13 15:44:01.219513"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 122ms (Views: 115.1ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.2ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 29ms (Views: 22.7ms | ActiveRecord: 0.4ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fef39d8cec8 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57550-x0oomp.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57550-1pga645.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57550-mhxihr.pdf'
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:44:01.395117"], ["updated_at", "2015-07-13 15:44:01.408462"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 23ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:44:01.432008"], ["updated_at", "2015-07-13 15:44:01.432008"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fef40727540 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57550-19rj8ss.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57550-9illyp.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57550-1819bf8.pdf'
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:44:01.452559"], ["updated_at", "2015-07-13 15:44:01.465478"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 21ms (ActiveRecord: 0.7ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:44:01.485982"], ["updated_at", "2015-07-13 15:44:01.485982"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fef404a53a8 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57550-10kx60p.exe>, @original_filename="calc.exe", @content_type="application/x-msdos-program", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"calc.exe\"\r\nContent-Type: application/x-msdos-program\r\nContent-Length: 115200\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57550-1gxyt8o.exe'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57550-1q1e7t1.exe'
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (3.8ms)
+  Rendered products/edit.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 33ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:44:01.540474"], ["updated_at", "2015-07-13 15:44:01.540474"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:44:01.549949"], ["updated_at", "2015-07-13 15:44:01.549949"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+Started GET "/products/new" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (0.9ms)
+  Rendered products/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Test 2"}, "commit"=>"Create Product"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 2"], ["created_at", "2015-07-13 15:44:01.562246"], ["updated_at", "2015-07-13 15:44:01.562246"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/2
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/products/2" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 2]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:44:01.575201"], ["updated_at", "2015-07-13 15:44:01.575201"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/edit" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered products/_form.html.erb (1.0ms)
+  Rendered products/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Modified 1"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?  [["name", "Modified 1"], ["updated_at", "2015-07-13 15:44:01.589075"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:44:01.600779"], ["updated_at", "2015-07-13 15:44:01.600779"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started DELETE "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "products" WHERE "products"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/products" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:44:01.619408"], ["updated_at", "2015-07-13 15:44:01.619408"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (5.2ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 20ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:44:01.669232"], ["updated_at", "2015-07-13 15:44:01.669232"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.1ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (1.2ms)
+  Rendered products/show.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:44:01.709408"], ["updated_at", "2015-07-13 15:44:01.709408"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (1.8ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:44:01.740666"], ["updated_at", "2015-07-13 15:44:01.740666"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.2ms)
+  Rendered products/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+Started GET "/products/1/vulnerabilities/1/resolve" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by VulnerabilitiesController#resolve as HTML
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [1m[36mVulnerability Load (0.1ms)[0m  [1mSELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "vulnerabilities" SET "resolved" = ?, "resolved_time" = ?, "updated_at" = ? WHERE "vulnerabilities"."id" = ?  [["resolved", "t"], ["resolved_time", "2015-07-13 15:44:01.756535"], ["updated_at", "2015-07-13 15:44:01.756858"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:01 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.2ms)
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  ORDER BY "vulnerabilities"."id" ASC LIMIT 1  [["product_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:44:59.659564"], ["updated_at", "2015-07-13 15:44:59.659564"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 125ms (Views: 117.4ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 26ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fe82ab09b58 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57566-jxytgt.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57566-1ispnkl.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57566-pz75ou.pdf'
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:44:59.834509"], ["updated_at", "2015-07-13 15:44:59.848919"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 23ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:44:59.871027"], ["updated_at", "2015-07-13 15:44:59.871027"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fe82937d2a0 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57566-1ibotei.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57566-42qy9p.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57566-1lr5q7c.pdf'
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:44:59.886780"], ["updated_at", "2015-07-13 15:44:59.902280"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 24ms (ActiveRecord: 0.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:44:59.924571"], ["updated_at", "2015-07-13 15:44:59.924571"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fe82986c090 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57566-1pdgwwh.exe>, @original_filename="calc.exe", @content_type="application/x-msdos-program", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"calc.exe\"\r\nContent-Type: application/x-msdos-program\r\nContent-Length: 115200\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57566-a9kf4j.exe'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57566-1e5ngmq.exe'
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (4.7ms)
+  Rendered products/edit.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 35ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:44:59.982123"], ["updated_at", "2015-07-13 15:44:59.982123"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:44:59.995280"], ["updated_at", "2015-07-13 15:44:59.995280"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:44:59 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+Started GET "/products/new" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (1.0ms)
+  Rendered products/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Test 2"}, "commit"=>"Create Product"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 2"], ["created_at", "2015-07-13 15:45:00.012827"], ["updated_at", "2015-07-13 15:45:00.012827"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/2
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/products/2" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 2]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:45:00.024318"], ["updated_at", "2015-07-13 15:45:00.024318"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/edit" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered products/_form.html.erb (0.9ms)
+  Rendered products/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Modified 1"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?  [["name", "Modified 1"], ["updated_at", "2015-07-13 15:45:00.040252"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:45:00.051067"], ["updated_at", "2015-07-13 15:45:00.051067"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started DELETE "/products/1" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "products" WHERE "products"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/products" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:45:00.068811"], ["updated_at", "2015-07-13 15:45:00.068811"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (3.6ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 0.1ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:45:00.110332"], ["updated_at", "2015-07-13 15:45:00.110332"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.8ms)
+  Rendered products/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:45:00.141815"], ["updated_at", "2015-07-13 15:45:00.141815"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (1.2ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:45:00.164862"], ["updated_at", "2015-07-13 15:45:00.164862"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.2ms)
+  Rendered products/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/1/resolve" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by VulnerabilitiesController#resolve as HTML
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [1m[36mVulnerability Load (0.1ms)[0m  [1mSELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "vulnerabilities" SET "resolved" = ?, "resolved_time" = ?, "updated_at" = ? WHERE "vulnerabilities"."id" = ?  [["resolved", "t"], ["resolved_time", "2015-07-13 15:45:00.179390"], ["updated_at", "2015-07-13 15:45:00.179768"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:45:00 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.1ms)
+  Rendered products/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  ORDER BY "vulnerabilities"."id" ASC LIMIT 1  [["product_id", 1]]
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:47:48.866558"], ["updated_at", "2015-07-13 15:47:48.866558"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:47:48 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 117ms (Views: 109.6ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:48 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 27ms (Views: 19.8ms | ActiveRecord: 0.3ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fb0102b5b98 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57800-1isq1df.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57800-1emc936.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57800-hdnkx9.pdf'
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:47:49.035501"], ["updated_at", "2015-07-13 15:47:49.049540"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 23ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:47:49.070739"], ["updated_at", "2015-07-13 15:47:49.070739"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fb0114f5c40 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57800-1lmhbyq.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57800-1fvuqvf.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57800-ldty7m.pdf'
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:47:49.086916"], ["updated_at", "2015-07-13 15:47:49.098046"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 18ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:47:49.119605"], ["updated_at", "2015-07-13 15:47:49.119605"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.2ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fb01144dcc0 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57800-97mo59.exe>, @original_filename="calc.exe", @content_type="application/x-msdos-program", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"calc.exe\"\r\nContent-Type: application/x-msdos-program\r\nContent-Length: 115200\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57800-jsj3oz.exe'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57800-1uv7yu0.exe'
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (3.9ms)
+  Rendered products/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 37ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:47:49.176777"], ["updated_at", "2015-07-13 15:47:49.176777"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:47:49.187538"], ["updated_at", "2015-07-13 15:47:49.187538"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started GET "/products/new" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (0.9ms)
+  Rendered products/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Test 2"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 2"], ["created_at", "2015-07-13 15:47:49.202261"], ["updated_at", "2015-07-13 15:47:49.202261"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/2
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/products/2" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 2]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:47:49.213715"], ["updated_at", "2015-07-13 15:47:49.213715"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/edit" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered products/_form.html.erb (1.3ms)
+  Rendered products/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Modified 1"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?  [["name", "Modified 1"], ["updated_at", "2015-07-13 15:47:49.229883"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:47:49.240642"], ["updated_at", "2015-07-13 15:47:49.240642"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started DELETE "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "products" WHERE "products"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/products" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:47:49.259393"], ["updated_at", "2015-07-13 15:47:49.259393"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (4.1ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 16ms (Views: 9.9ms | ActiveRecord: 0.1ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:47:49.302083"], ["updated_at", "2015-07-13 15:47:49.302083"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (1.0ms)
+  Rendered products/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:47:49.335702"], ["updated_at", "2015-07-13 15:47:49.335702"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (1.3ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:47:49.359504"], ["updated_at", "2015-07-13 15:47:49.359504"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.1ms)
+  Rendered products/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/1/resolve" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by VulnerabilitiesController#resolve as HTML
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "vulnerabilities" SET "resolved" = ?, "resolved_time" = ?, "updated_at" = ? WHERE "vulnerabilities"."id" = ?  [["resolved", "t"], ["resolved_time", "2015-07-13 15:47:49.371436"], ["updated_at", "2015-07-13 15:47:49.371954"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:47:49 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.1ms)
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  ORDER BY "vulnerabilities"."id" ASC LIMIT 1  [["product_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:49:55.448962"], ["updated_at", "2015-07-13 15:49:55.448962"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 116ms (Views: 107.1ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fb3ac5286b0 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57923-1n14wi6.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57923-1fcxr9x.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57923-gu8w80.pdf'
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:49:55.616434"], ["updated_at", "2015-07-13 15:49:55.630982"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 23ms (ActiveRecord: 0.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:49:55.651071"], ["updated_at", "2015-07-13 15:49:55.651071"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fb3ad705bd0 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57923-7d3xfg.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57923-1y4i2f2.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57923-qh5v00.pdf'
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:49:55.666501"], ["updated_at", "2015-07-13 15:49:55.678292"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 19ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:49:55.698078"], ["updated_at", "2015-07-13 15:49:55.698078"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007fb3ac420da8 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57923-1dagx4v.exe>, @original_filename="calc.exe", @content_type="application/x-msdos-program", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"calc.exe\"\r\nContent-Type: application/x-msdos-program\r\nContent-Length: 115200\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57923-jgv9k7.exe'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57923-cc5i9.exe'
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (6.2ms)
+  Rendered products/edit.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 37ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:49:55.755082"], ["updated_at", "2015-07-13 15:49:55.755082"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:49:55.764701"], ["updated_at", "2015-07-13 15:49:55.764701"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+Started GET "/products/new" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (0.8ms)
+  Rendered products/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Test 2"}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 2"], ["created_at", "2015-07-13 15:49:55.777875"], ["updated_at", "2015-07-13 15:49:55.777875"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/2
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/products/2" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 2]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:49:55.788480"], ["updated_at", "2015-07-13 15:49:55.788480"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/edit" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered products/_form.html.erb (0.8ms)
+  Rendered products/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Modified 1"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?  [["name", "Modified 1"], ["updated_at", "2015-07-13 15:49:55.802743"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:49:55.813469"], ["updated_at", "2015-07-13 15:49:55.813469"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+Started DELETE "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "products" WHERE "products"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+Started GET "/products" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:49:55.830029"], ["updated_at", "2015-07-13 15:49:55.830029"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (4.1ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 0.1ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:49:55.874917"], ["updated_at", "2015-07-13 15:49:55.874917"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.9ms)
+  Rendered products/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:49:55.912403"], ["updated_at", "2015-07-13 15:49:55.912403"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (1.3ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:49:55.938223"], ["updated_at", "2015-07-13 15:49:55.938223"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.3ms)
+  Rendered products/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+Started GET "/products/1/vulnerabilities/1/resolve" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by VulnerabilitiesController#resolve as HTML
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "vulnerabilities" SET "resolved" = ?, "resolved_time" = ?, "updated_at" = ? WHERE "vulnerabilities"."id" = ?  [["resolved", "t"], ["resolved_time", "2015-07-13 15:49:55.953194"], ["updated_at", "2015-07-13 15:49:55.953692"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:49:55 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.2ms)
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  ORDER BY "vulnerabilities"."id" ASC LIMIT 1  [["product_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:51:44.355959"], ["updated_at", "2015-07-13 15:51:44.355959"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 120ms (Views: 112.1ms | ActiveRecord: 0.2ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 26ms (Views: 20.7ms | ActiveRecord: 0.3ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007f92092a6118 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57940-14m2deh.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57940-1rujukz.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57940-udfbyx.pdf'
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:51:44.537810"], ["updated_at", "2015-07-13 15:51:44.555201"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 28ms (ActiveRecord: 0.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:51:44.580202"], ["updated_at", "2015-07-13 15:51:44.580202"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007f9204c478c0 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57940-evcgad.pdf>, @original_filename="report-sample.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"report-sample.pdf\"\r\nContent-Type: application/pdf\r\nContent-Length: 7945\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57940-1seq12e.pdf'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/f3250d13e94949185bde9f1ea4f2504020150713-57940-ctahjq.pdf'
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "products" SET "document_file_name" = ?, "document_content_type" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["document_file_name", "report-sample.pdf"], ["document_content_type", "application/pdf"], ["document_file_size", 7945], ["document_updated_at", "2015-07-13 15:51:44.597501"], ["updated_at", "2015-07-13 15:51:44.610419"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 23ms (ActiveRecord: 0.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My product"], ["created_at", "2015-07-13 15:51:44.636135"], ["updated_at", "2015-07-13 15:51:44.636135"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"document"=>#<ActionDispatch::Http::UploadedFile:0x007f92029738a8 @tempfile=#<Tempfile:/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/RackMultipart20150713-57940-18mmqok.exe>, @original_filename="calc.exe", @content_type="application/x-msdos-program", @headers="Content-Disposition: form-data; name=\"product[document]\"; filename=\"calc.exe\"\r\nContent-Type: application/x-msdos-program\r\nContent-Length: 115200\r\n">}, "commit"=>"Update report", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57940-1hp0a0b.exe'
+Command :: file -b --mime '/var/folders/3c/8b9lbjdd28q3xld7r5gtsr7r0000gp/T/74e338c3d6c13c11b54998028bd1adfb20150713-57940-1jovj00.exe'
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (5.1ms)
+  Rendered products/edit.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 50ms (Views: 9.6ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:51:44.717922"], ["updated_at", "2015-07-13 15:51:44.717922"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:51:44.732537"], ["updated_at", "2015-07-13 15:51:44.732537"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/new" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (1.6ms)
+  Rendered products/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Test 2"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 2"], ["created_at", "2015-07-13 15:51:44.763912"], ["updated_at", "2015-07-13 15:51:44.763912"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/2
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/products/2" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 2]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:51:44.776505"], ["updated_at", "2015-07-13 15:51:44.776505"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/edit" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered products/_form.html.erb (0.9ms)
+  Rendered products/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started PATCH "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "product"=>{"name"=>"Modified 1"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "products" SET "name" = ?, "updated_at" = ? WHERE "products"."id" = ?  [["name", "Modified 1"], ["updated_at", "2015-07-13 15:51:44.792412"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:51:44.804370"], ["updated_at", "2015-07-13 15:51:44.804370"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started DELETE "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "products" WHERE "products"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/products" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Test 1"], ["created_at", "2015-07-13 15:51:44.825428"], ["updated_at", "2015-07-13 15:51:44.825428"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (4.2ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 10.4ms | ActiveRecord: 0.1ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:51:44.882476"], ["updated_at", "2015-07-13 15:51:44.882476"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.6ms)
+  Rendered products/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Test 1"], ["created_at", "2015-07-13 15:51:44.909887"], ["updated_at", "2015-07-13 15:51:44.909887"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.1ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered products/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/new" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by VulnerabilitiesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  [1m[35mProduct Load (0.0ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered vulnerabilities/_form.html.erb (2.2ms)
+  Rendered vulnerabilities/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+Started POST "/products/1/vulnerabilities" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by VulnerabilitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "vulnerability"=>{"issue"=>"an issue", "severity"=>"high", "remediation"=>"a fix"}, "commit"=>"Create Vulnerability", "product_id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "vulnerabilities" ("issue", "severity", "remediation", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["issue", "an issue"], ["severity", "high"], ["remediation", "a fix"], ["product_id", 1], ["created_at", "2015-07-13 15:51:44.934502"], ["updated_at", "2015-07-13 15:51:44.934502"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.0ms)[0m  SELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.2ms)
+  Rendered products/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started GET "/products/1/vulnerabilities/1/resolve" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by VulnerabilitiesController#resolve as HTML
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "vulnerabilities" SET "resolved" = ?, "resolved_time" = ?, "updated_at" = ? WHERE "vulnerabilities"."id" = ?  [["resolved", "t"], ["resolved_time", "2015-07-13 15:51:44.944674"], ["updated_at", "2015-07-13 15:51:44.945155"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/products/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/products/1" for 127.0.0.1 at 2015-07-13 16:51:44 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mVulnerability Load (0.0ms)[0m  [1mSELECT "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered vulnerabilities/_vulnerability.html.erb (0.2ms)
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+  [1m[35mVulnerability Load (0.1ms)[0m  SELECT  "vulnerabilities".* FROM "vulnerabilities" WHERE "vulnerabilities"."product_id" = ?  ORDER BY "vulnerabilities"."id" ASC LIMIT 1  [["product_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
