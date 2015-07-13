@@ -18,7 +18,7 @@ class VulnerabilitiesController < ApplicationController
 
   def destroy
     with_known_vulnerability do
-    	 @vulnerability.destroy
+    	@vulnerability.destroy
     end
   end
 
