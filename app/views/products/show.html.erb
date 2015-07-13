@@ -5,10 +5,12 @@
 
 <h2>Vulnerabilities</h2>
 <%= render @product.vulnerabilities %>
+
+ <%= link_to 'Add vulnerability', new_product_vulnerability_path(@product) %>
         
 <h2>Report</h2>
 
-<% if @product.document %>
+<% if @product.document.exists? %>
   <%= link_to "Download", @product.document.url(:original, false) %>
 <% end %>
 
