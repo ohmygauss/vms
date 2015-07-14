@@ -1,2 +1,0 @@
-class AddReportToProductController < ApplicationController
-end
