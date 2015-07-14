@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :vulnerabilities do
       member do
-        get :resolve
+        post :resolve
       end
     end
   end

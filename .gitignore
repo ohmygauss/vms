@@ -1,3 +1,4 @@
 tmp/
 public/system/products/
 log/
+.DS_Store

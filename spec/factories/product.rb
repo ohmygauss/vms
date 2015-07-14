@@ -26,7 +26,6 @@ PRODUCTS = [
 ]
 
 FactoryGirl.define do
-  
   factory :product do
     name  { PRODUCTS.shuffle.first }
   end

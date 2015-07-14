@@ -1,21 +1,12 @@
-require 'smarter_csv'
+namespace :import do
+  DEFAULT_FILE = 'resources/portfolio.csv'
 
-filename = '/Users/ahanadatta/Downloads/portfolio.csv'
+  desc 'Import products from a CSV file'
+  task :products, [:filepath] => :environment do |_, args|
+    filepath = args[:filepath] || DEFAULT_FILE
 
-
-
-task :csv_product_import => :environment do
-  
-  rows = SmarterCSV.process(filename)
-  rows.each do |row|
-  	p = Product.create!({
-  		:name => row[:name]
-  		}) unless row[:name].blank?
+    raise ArgumentError, "File not found at #{filepath}" unless File.exists?(filepath)
+    ProductImporter.run!(filepath)
   end
-
-
-  #  names = []
-  #  portfolio = SmarterCSV.process(filename) 
-  #  names = portfolio.map { |portfolio| portfolio[:name] }
-   
 end
+

@@ -13,6 +13,14 @@ class VulnerabilitiesController < ApplicationController
     end
   end
 
+  def destroy
+    with_product do
+      Vulnerability.find(params[:id]).destroy
+
+      redirect_to product_path(@product), notice: 'Vulnerability was successfully destroyed'
+    end
+  end
+
   def create
     with_product do
       @vulnerability = @product.vulnerabilities.create!(vulnerability_params)
