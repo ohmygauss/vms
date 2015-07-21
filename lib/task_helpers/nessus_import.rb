@@ -41,7 +41,7 @@ module TaskHelpers
 
     def start_again
       puts '[-] Invalid response. Starting over...'
-      import_interface
+      interface
     end
   end
 end
