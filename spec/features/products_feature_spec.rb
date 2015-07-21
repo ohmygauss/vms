@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'Products Feature', type: :feature do
   before(:each) do
     create(:product, name: 'Test 1')
+    http_login 
     visit '/'
   end
 

@@ -1,4 +1,4 @@
-require_relative '../../lib/product_importer'
+require_relative '../../lib/product_importer.rb'
 
 describe ProductImporter do
   let(:csv)   { [{ name: 'P1' }, { name: 'P2' }] }

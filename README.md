@@ -44,3 +44,7 @@ Feature tests are run using the command:
 ```shell
   $ bundle exec rspec
 ```
+
+# Environment variables
+
+Please set the APP_USER and APP_PASS variables in production (required for http basic auth)

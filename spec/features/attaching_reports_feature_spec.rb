@@ -5,6 +5,7 @@ describe 'Attaching Reports Feature', type: :feature do
   let(:malicious_file) { 'spec/resources/calc.exe'          }
 
   before(:each) do
+    http_login 
     create(:product, name: 'My product')
   end
 
