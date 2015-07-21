@@ -14,7 +14,7 @@ module TaskHelpers
         when 'N'
           create_new_product
         else 
-          start_again
+          start_again(file)
         end
 
       puts '[+] Running vulnerability import...'
@@ -41,7 +41,7 @@ module TaskHelpers
 
     def start_again
       puts '[-] Invalid response. Starting over...'
-      interface
+      interface(file)
     end
   end
 end
