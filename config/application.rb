@@ -22,7 +22,7 @@ module VMS
     # config.i18n.default_locale = :de
 
     # Custom directories with classes and modules you want to be autoloadable.
-    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths << Rails.root.join('lib')
 
     config.encoding = 'utf-8'
 

@@ -1,0 +1,9 @@
+Plugin ID,CVE,CVSS,Risk,Host,Protocol,Port,Name,Synopsis,Description,Solution,See Also,Plugin Output
+10107,,,None,test.dsd.io,tcp,443,HTTP Server Type and Version 1,A web server is running on the remote host.,"This plugin attempts to determine the type and the version of the
+remote web server.",n/a,,"The remote web server type is :
+
+nginx"
+10107,,,None,test.dsd.io,tcp,80,HTTP Server Type and Version 2,A web server is running on the remote host.,"This plugin attempts to determine the type and the version of the
+remote web server.",n/a,,"The remote web server type is :
+
+nginx"
